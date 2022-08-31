@@ -1,3 +1,5 @@
+import { BigNumber } from "ethers";
+import { ethers } from "hardhat";
 import { DeployFunction } from "hardhat-deploy/types";
 
 import { VERIFICATION_BLOCK_CONFIRMATIONS, developmentChains } from "../helper-config";
@@ -9,12 +11,20 @@ const func: DeployFunction = async ({ getNamedAccounts, deployments, network }) 
   const isDev = developmentChains.includes(network.name);
   const waitConfirmations = isDev ? 1 : VERIFICATION_BLOCK_CONFIRMATIONS;
 
-  // the following will only deploy "Attack" if the contract was never deployed or if the code changed since last deployment
-  const victim = await deployments.get("Victim");
-  const args = [victim.address];
-  const attack = await deploy("Attack", {
+  let value: BigNumber;
+  if (isDev) {
+    value = ethers.utils.parseEther("0.1");
+    // deploy mocks/test contract
+  } else {
+    value = BigNumber.from(0);
+    // set external contract address
+  }
+
+  // the following will only deploy "Game" if the contract was never deployed or if the code changed since last deployment
+  const game = await deploy("Game", {
     from: deployer,
-    args,
+    args: [],
+    value,
     log: true,
     autoMine: isDev,
     waitConfirmations,
@@ -23,10 +33,10 @@ const func: DeployFunction = async ({ getNamedAccounts, deployments, network }) 
   // Verify the deployment
   if (!isDev) {
     log("Verifying...");
-    await verify(attack.address, []);
+    await verify(game.address, []);
   }
 };
 
 export default func;
-func.tags = ["all", "DelegateCall", "Attack"];
-func.dependencies = ["Victim"]; // this contains dependencies tags need to execute before deploy this contract
+func.tags = ["all", "Randomness", "Game"];
+func.dependencies = []; // this contains dependencies tags need to execute before deploy this contract

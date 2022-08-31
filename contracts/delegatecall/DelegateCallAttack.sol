@@ -4,7 +4,7 @@ pragma solidity ^0.8.4;
 import "./Victim.sol";
 import "hardhat/console.sol";
 
-contract Attack {
+contract DelegateCallAttack {
     address public helper;
     address public owner;
     uint256 public num;

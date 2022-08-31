@@ -1,7 +1,7 @@
 import { expect } from "chai";
 import { deployments, ethers, getNamedAccounts } from "hardhat";
 
-import { Attack } from "../src/types/delegatecall/Attack";
+import { DelegateCallAttack } from "../src/types/delegatecall/DelegateCallAttack";
 import { Victim } from "../src/types/delegatecall/Victim";
 
 describe("DelegateCall testcase", () => {
@@ -9,7 +9,7 @@ describe("DelegateCall testcase", () => {
     await deployments.fixture(["DelegateCall"]);
     const { deployer } = await getNamedAccounts();
     const victimContract: Victim = await ethers.getContract("Victim", deployer);
-    const attackContract: Attack = await ethers.getContract("Attack", deployer);
+    const attackContract: DelegateCallAttack = await ethers.getContract("DelegateCallAttack", deployer);
 
     // Start the attack
     const tx = await attackContract.attack();
