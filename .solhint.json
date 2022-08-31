@@ -14,6 +14,7 @@
       }
     ],
     "reason-string": ["warn", { "maxLength": 64 }],
-    "avoid-low-level-calls": "off"
+    "avoid-low-level-calls": "off",
+    "no-empty-blocks": "off"
   }
 }
