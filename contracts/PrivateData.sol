@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.4;
 
-contract Login {
+contract PrivateData {
     // Private variables
     // Each bytes32 variable would occupy one slot
     // because bytes32 variable has 256 bits(32*8)
