@@ -1,5 +1,147 @@
 # Solidity API
 
+## MaliciousExternalAttack
+
+### userEligible
+
+```solidity
+mapping(address => bool) userEligible
+```
+
+_userEligible[user] => isEligible_
+
+### isUserEligible
+
+```solidity
+function isUserEligible(address user) external view returns (bool)
+```
+
+_this function will return if `user` is eligible in whitelist contract or not_
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| user | address | address of user |
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| [0] | bool | is `user` eligible? |
+
+### setUserEligible
+
+```solidity
+function setUserEligible(address user) external
+```
+
+_this function is used to set user eligible status_
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| user | address | address of given user |
+
+### fallback
+
+```solidity
+fallback() external
+```
+
+_fallback function_
+
+## Whitelist
+
+### userEligible
+
+```solidity
+mapping(address => bool) userEligible
+```
+
+_userEligible[user] => isEligible_
+
+### isUserEligible
+
+```solidity
+function isUserEligible(address user) external view returns (bool)
+```
+
+_this function will return if `user` is eligible in whitelist contract or not_
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| user | address | address of user |
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| [0] | bool | is `user` eligible? |
+
+### setUserEligible
+
+```solidity
+function setUserEligible(address user) external
+```
+
+_this function is used to set user eligible status_
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| user | address | address of given user |
+
+### fallback
+
+```solidity
+fallback() external
+```
+
+_fallback function_
+
+## WhitelistConsumer
+
+### whitelist
+
+```solidity
+contract Whitelist whitelist
+```
+
+_whitelist contract_
+
+### constructor
+
+```solidity
+constructor(address _whitelist) public payable
+```
+
+_constructor function_
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| _whitelist | address | given whitelist contract address |
+
+### isUserEligible
+
+```solidity
+function isUserEligible() external view returns (bool)
+```
+
+_this function will return if `msg.sender` is eligible in whitelist contract or not_
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| [0] | bool | is `msg.sender` eligible? |
+
+### addToWhitelist
+
+```solidity
+function addToWhitelist() external
+```
+
+_this function is used to add `msg.sender` to eligible in whitelist contract_
+
+### fallback
+
+```solidity
+fallback() external
+```
+
+_fallback function_
+
 ## Helper
 
 _the contract is called by delegatecall from another contract_
@@ -23,6 +165,108 @@ _setter function used to set `num` to given `_num`_
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | _num | uint256 | the given number to set `num` variable |
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| status | bool | Return status of the operation |
+
+## MaliciousExternalAttack
+
+## Whitelist
+
+### userEligible
+
+```solidity
+mapping(address => bool) userEligible
+```
+
+_userEligible[user] => isEligible_
+
+### isUserEligible
+
+```solidity
+function isUserEligible(address user) external view returns (bool)
+```
+
+_this function will return if `user` is eligible in whitelist contract or not_
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| user | address | address of user |
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| [0] | bool | is `user` eligible? |
+
+### setUserEligible
+
+```solidity
+function setUserEligible(address user) external
+```
+
+_this function is used to set user eligible status_
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| user | address | address of given user |
+
+### fallback
+
+```solidity
+fallback() external
+```
+
+_fallback function_
+
+## WhitelistConsumer
+
+### whitelist
+
+```solidity
+contract Whitelist whitelist
+```
+
+_whitelist contract_
+
+### constructor
+
+```solidity
+constructor(address _whitelist) public
+```
+
+_constructor function_
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| _whitelist | address | given whitelist contract address |
+
+### isUserEligible
+
+```solidity
+function isUserEligible() external view returns (bool)
+```
+
+_this function will return if `msg.sender` is eligible in whitelist contract or not_
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| [0] | bool | is `msg.sender` eligible? |
+
+### addToWhitelist
+
+```solidity
+function addToWhitelist() external
+```
+
+_this function is used to add `msg.sender` to eligible in whitelist contract_
+
+### fallback
+
+```solidity
+fallback() external
+```
+
+_fallback function_
 
 ## PrivateData
 

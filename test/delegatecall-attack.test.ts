@@ -1,8 +1,8 @@
 import { expect } from "chai";
 import { deployments, ethers, getNamedAccounts } from "hardhat";
 
-import { DelegateCallAttack } from "../src/types/delegatecall/DelegateCallAttack";
-import { Victim } from "../src/types/delegatecall/Victim";
+import { DelegateCallAttack } from "../src/types/contracts/delegatecall/DelegateCallAttack";
+import { Victim } from "../src/types/contracts/delegatecall/Victim";
 
 describe("DelegateCall testcase", () => {
   it("should change the owner of the victim contract", async () => {

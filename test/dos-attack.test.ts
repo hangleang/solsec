@@ -1,8 +1,8 @@
 import { expect } from "chai";
 import { deployments, ethers } from "hardhat";
 
-import { Auction } from "../src/types/dos/Auction";
-import { DOSAttack } from "../src/types/dos/DOSAttack";
+import { Auction } from "../src/types/contracts/dos/Auction";
+import { DOSAttack } from "../src/types/contracts/dos/DOSAttack";
 
 describe("DOS attack testcase", () => {
   it("after being declared the winner, DOSAttack.sol should not allow anyone else to become the winner", async () => {

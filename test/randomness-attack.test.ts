@@ -2,8 +2,8 @@ import { expect } from "chai";
 import { BigNumber } from "ethers";
 import { deployments, ethers } from "hardhat";
 
-import { Game } from "../src/types/randomness/Game";
-import { RandomnessAttack } from "../src/types/randomness/RandomnessAttack";
+import { Game } from "../src/types/contracts/randomness/Game";
+import { RandomnessAttack } from "../src/types/contracts/randomness/RandomnessAttack";
 
 describe("Randomness testcase", () => {
   it("should be able to guess the exact number", async () => {

@@ -16,6 +16,8 @@
     "reason-string": ["warn", { "maxLength": 64 }],
     "avoid-low-level-calls": "off",
     "no-empty-blocks": "off",
-    "avoid-tx-origin": "off"
+    "avoid-tx-origin": "off",
+    "state-visibility": "off",
+    "payable-fallback": "off"
   }
 }

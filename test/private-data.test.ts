@@ -1,8 +1,8 @@
 import { expect } from "chai";
 import { deployments, ethers } from "hardhat";
 
-import { PrivateData } from "../src/types/PrivateData";
-import { PrivateData__factory } from "../src/types/factories/PrivateData__factory";
+import { PrivateData } from "../src/types/contracts/PrivateData";
+import { PrivateData__factory } from "../src/types/factories/contracts/PrivateData__factory";
 
 const deployPrivateDataFixture = deployments.createFixture(async ({ deployments, ethers }) => {
   await deployments.fixture(); // ensure you start from a fresh deployments

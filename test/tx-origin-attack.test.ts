@@ -2,8 +2,8 @@ import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
 import { expect } from "chai";
 import { deployments, ethers } from "hardhat";
 
-import { Owner } from "../src/types/tx-origin/Owner";
-import { TxOriginAttack } from "../src/types/tx-origin/TxOriginAttack";
+import { Owner } from "../src/types/contracts/tx-origin/Owner";
+import { TxOriginAttack } from "../src/types/contracts/tx-origin/TxOriginAttack";
 
 describe("TxOrigin Attack testcase", () => {
   it("TxOriginAttack.sol will be able to change the owner of Owner.sol", async () => {
