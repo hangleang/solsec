@@ -1,5 +1,53 @@
 # Solidity API
 
+## UUPSNFT
+
+### initialize
+
+```solidity
+function initialize() external
+```
+
+### _authorizeUpgrade
+
+```solidity
+function _authorizeUpgrade(address newImpl) internal view
+```
+
+### version
+
+```solidity
+function version() external pure virtual returns (string)
+```
+
+## UUPSNFTv2
+
+### version
+
+```solidity
+function version() external pure virtual returns (string)
+```
+
+## MetaTokenTransfer
+
+### executedTxn
+
+```solidity
+mapping(bytes32 => bool) executedTxn
+```
+
+### transfer
+
+```solidity
+function transfer(address sender, address recipient, uint256 amount, address tokenAddress, uint256 nonce, bytes signature) external
+```
+
+### getHash
+
+```solidity
+function getHash(address sender, address recipient, uint256 amount, address tokenAddress, uint256 nonce) public pure returns (bytes32)
+```
+
 ## PrivateData
 
 _Each bytes32 variable would occupy one slot
@@ -408,6 +456,34 @@ fallback() external
 ```
 
 _fallback function_
+
+## MagicToken
+
+### constructor
+
+```solidity
+constructor() public
+```
+
+### faucet
+
+```solidity
+function faucet(uint256 amount) external
+```
+
+## MetaTokenTransfer
+
+### transfer
+
+```solidity
+function transfer(address sender, address recipient, uint256 amount, address tokenAddress, bytes signature) external
+```
+
+### getHash
+
+```solidity
+function getHash(address sender, address recipient, uint256 amount, address tokenAddress) public pure returns (bytes32)
+```
 
 ## UUPSNFT
 
