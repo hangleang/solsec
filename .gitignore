@@ -16,6 +16,7 @@
 **/node_modules
 **/src/types
 **/deployments
+.openzeppelin/
 
 # files
 *.env
